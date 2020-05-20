@@ -1,0 +1,16 @@
+<!-- Toolbar -->
+<div class="toolbar">
+  <h2>{{ title }}</h2>
+  <h1>Week: {{ weekNumber }}</h1>
+  <h2>{{ "Calendar" | uppercase }}</h2>
+</div>
+
+<!--Content-->
+<div class="content">
+  <app-event-item *ngFor="let event of events" [event]="event"></app-event-item>
+  <app-week-view></app-week-view>
+  <app-event-form (addEvent)="addEvent($event)"></app-event-form>
+</div>
+
+<!-- Footer -->
+<footer></footer>

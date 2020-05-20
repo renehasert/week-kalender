@@ -1,0 +1,56 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <ul class="form-list">
+      <li>
+        <label>Title</label>
+        <input
+          type="text"
+          name="title"
+          [(ngModel)]="title"
+          placeholder="Title"
+        />
+      </li>
+
+      <li>
+        <label>Notes</label>
+        <textarea
+          name="notes"
+          [(ngModel)]="notes"
+          style="height: 200px;"
+          placeholder="Medicines, peculiarities..."
+        ></textarea>
+      </li>
+
+      <li>
+        <label>Patient's name</label>
+        <input
+          type="text"
+          name="patient"
+          [(ngModel)]="patient"
+          placeholder="Name"
+        />
+      </li>
+
+      <li>
+        <label>Patient's age</label>
+        <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
+      </li>
+
+      <li>
+        <label>Date</label>
+        <input type="date" name="date" [(ngModel)]="date" />
+      </li>
+      <li>
+        <label>Starts at</label>
+        <input type="time" name="startTime" [(ngModel)]="startTime" />
+      </li>
+      <li>
+        <label>Ends at</label>
+        <input type="time" name="endTime" [(ngModel)]="endTime" />
+      </li>
+      <li>
+        <button type="submit" value="Submit">Add appointment</button>
+      </li>
+    </ul>
+  </form>
+</div>
