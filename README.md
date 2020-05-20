@@ -20,7 +20,8 @@
 - De nieuwe afspraak wordt gelogd in console. Er is geen form validation.
 - De nieuwe afspraak is weg na een refresh, dus niet opgeslagen in bijvoorbeeld cache of localstorage.
 - Had graag bij de afsprakenlijst een simpeler 'Begint' en 'Eindigt' -string gehad, i.p.v de hele Date string. Dit was het einde van de dag, ik kwam er zo snel niet uit.
-- Halverwege bedacht ik dat alles in het Engels was. Een gewoonte. Ik heb zoveel mogelijk naar Nederlands veranderd.
+- Halverwege bedacht ik dat alles in het Engels was, uit gewoonte. Ik heb zoveel mogelijk naar het Nederlands veranderd.
+- Had me achteraf beter moeten houden aan de Semantic Commit Messages voor Git.
 - Er staat een tip bij de opdracht over hoe ik zou omgaan met zomer-/wintertijd. Volgens mij heeft de zomer- of wintertijd geen invloed op de applicatie, aangezien de tijd op elke computer is aangepast op het juiste moment.
 
 ## Ten einde
