@@ -14,9 +14,9 @@ export class EventService {
         title: 'Rugpijn',
         patient: 'Henk Beenham',
         age: 65,
-        date: '2020-04-17',
-        startTime: '11:30',
-        endTime: '11:50',
+        date: '2020-05-20',
+        start: '11',
+        end: '12',
       },
       {
         id: 1,
@@ -24,8 +24,8 @@ export class EventService {
         patient: 'Anita Hielzeer',
         age: 46,
         date: '2020-04-17',
-        startTime: '12:30',
-        endTime: '12:50',
+        start: '12:30',
+        end: '12:50',
       },
       {
         id: 1,
@@ -33,8 +33,8 @@ export class EventService {
         patient: 'Frans Leegdans',
         age: 19,
         date: '2020-04-27',
-        startTime: '08:30',
-        endTime: '09:50',
+        start: '08:30',
+        end: '09:50',
       },
       {
         id: 1,
@@ -42,8 +42,8 @@ export class EventService {
         patient: 'Max Havelaar',
         age: 92,
         date: '2020-05-17',
-        startTime: '11:30',
-        endTime: '11:50',
+        start: '11:30',
+        end: '11:50',
       },
     ];
   }

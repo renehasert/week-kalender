@@ -3,8 +3,9 @@
   max-width: 1200px;
   margin: 5vh 5vw;
   padding: 20px 0;
-  background: #00000011;
-  border-radius: 10px;
+  background: #19d27c44;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px #00000066;
 }
 
 .container * {

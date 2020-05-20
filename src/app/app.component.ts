@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { Event } from './models/Event';
 import { EventService } from './services/event.service';
+import { getWeek } from 'date-fns';
+import {
+  CalendarEvent,
+  CalendarDateFormatter,
+  DAYS_OF_WEEK,
+} from 'angular-calendar';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +14,14 @@ import { EventService } from './services/event.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string = 'Topicus';
-  weekNumber: 1;
-
   events: Event[];
+  viewDate: Date = new Date();
+  locale: string = 'nl';
+  title: string = 'Topicus';
+  weekNumber = getWeek(this.viewDate);
+  view: string = 'month';
+  weekStartsOn: number = 1;
+  weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
 
   constructor(private eventService: EventService) {}
 

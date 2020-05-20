@@ -7,8 +7,15 @@
 
 <!--Content-->
 <div class="content">
-  <app-event-item *ngFor="let event of events" [event]="event"></app-event-item>
-  <app-week-view></app-week-view>
+  <!-- <app-event-item *ngFor="let event of events" [event]="event"></app-event-item> -->
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale"
+    [weekStartsOn]="weekStartsOn"
+    [weekendDays]="weekendDays"
+  >
+  </mwl-calendar-week-view>
   <app-event-form (addEvent)="addEvent($event)"></app-event-form>
 </div>
 
