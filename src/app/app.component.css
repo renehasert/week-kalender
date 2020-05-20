@@ -38,3 +38,13 @@ p {
   position: relative;
   top: 70px;
 }
+
+.week-nav {
+  background: #19d27c;
+  min-width: 100px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
+  outline: none;
+}

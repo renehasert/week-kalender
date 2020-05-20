@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { Event } from './models/Event';
 import { EventService } from './services/event.service';
-import { getWeek } from 'date-fns';
-import {
-  CalendarEvent,
-  CalendarDateFormatter,
-  DAYS_OF_WEEK,
-} from 'angular-calendar';
+import { getWeek, addWeeks, subWeeks } from 'date-fns';
+import { DAYS_OF_WEEK } from 'angular-calendar';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +13,7 @@ export class AppComponent {
   events: Event[];
   viewDate: Date = new Date();
   locale: string = 'nl';
-  title: string = 'Topicus';
+  title: string = 'Dr. Dokter';
   weekNumber = getWeek(this.viewDate);
   view: string = 'month';
   weekStartsOn: number = 1;
@@ -31,5 +27,13 @@ export class AppComponent {
 
   addEvent(event: Event) {
     this.events.push(event);
+  }
+  addWeek() {
+    this.viewDate = addWeeks(this.viewDate, 1);
+    this.weekNumber = getWeek(this.viewDate);
+  }
+  subWeek() {
+    this.viewDate = subWeeks(this.viewDate, 1);
+    this.weekNumber = getWeek(this.viewDate);
   }
 }

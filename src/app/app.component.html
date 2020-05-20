@@ -1,13 +1,14 @@
 <!-- Toolbar -->
 <div class="toolbar">
   <h2>{{ title }}</h2>
+  <button class="week-nav" (click)="subWeek()">Vorige</button>
   <h1>Week: {{ weekNumber }}</h1>
-  <h2>{{ "Calendar" | uppercase }}</h2>
+  <button class="week-nav" (click)="addWeek()">Volgende</button>
+  <h2>{{ "Kalender" | uppercase }}</h2>
 </div>
 
 <!--Content-->
 <div class="content">
-  <!-- <app-event-item *ngFor="let event of events" [event]="event"></app-event-item> -->
   <mwl-calendar-week-view
     [viewDate]="viewDate"
     [events]="events"
@@ -16,7 +17,19 @@
     [weekendDays]="weekendDays"
   >
   </mwl-calendar-week-view>
+  <hr />
+  <h2>Voeg een afspraak toe</h2>
   <app-event-form (addEvent)="addEvent($event)"></app-event-form>
+  <hr />
+  <h2>Alle afspraken</h2>
+  <ul>
+    <li>
+      <app-event-item
+        *ngFor="let event of events"
+        [event]="event"
+      ></app-event-item>
+    </li>
+  </ul>
 </div>
 
 <!-- Footer -->

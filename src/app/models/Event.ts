@@ -4,8 +4,7 @@ export interface Event {
   age: number;
   title: string;
   notes?: string;
-  date: string;
-  start: string;
-  end: string;
+  start: Date;
+  end: Date;
   meta?: any;
 }

@@ -13,9 +13,8 @@ export class EventFormComponent implements OnInit {
   age: number;
   title: string;
   notes: string;
-  date: string;
-  startTime: string;
-  endTime: string;
+  start: Date;
+  end: Date;
 
   constructor() {}
 
@@ -28,9 +27,8 @@ export class EventFormComponent implements OnInit {
       age: this.age,
       patient: this.patient,
       notes: this.notes,
-      date: this.date,
-      startTime: this.startTime,
-      endTime: this.endTime,
+      start: new Date(this.start),
+      end: new Date(this.end),
     };
 
     this.addEvent.emit(event);

@@ -2,54 +2,49 @@
   <form (ngSubmit)="onSubmit()">
     <ul class="form-list">
       <li>
-        <label>Title</label>
+        <label>Titel</label>
         <input
           type="text"
           name="title"
           [(ngModel)]="title"
-          placeholder="Title"
+          placeholder="Klacht"
         />
       </li>
 
       <li>
-        <label>Notes</label>
+        <label>Notities</label>
         <textarea
           name="notes"
           [(ngModel)]="notes"
           style="height: 200px;"
-          placeholder="Medicines, peculiarities..."
+          placeholder="Medicijnen, bijzonderheden..."
         ></textarea>
       </li>
 
       <li>
-        <label>Patient's name</label>
+        <label>Patient</label>
         <input
           type="text"
           name="patient"
           [(ngModel)]="patient"
-          placeholder="Name"
+          placeholder="Naam"
         />
       </li>
 
       <li>
-        <label>Patient's age</label>
+        <label>Leeftijd</label>
         <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
       </li>
-
       <li>
-        <label>Date</label>
-        <input type="date" name="date" [(ngModel)]="date" />
+        <label>Begint</label>
+        <input type="datetime-local" name="start" [(ngModel)]="start" />
       </li>
       <li>
-        <label>Starts at</label>
-        <input type="time" name="startTime" [(ngModel)]="startTime" />
+        <label>Eindigt</label>
+        <input type="datetime-local" name="end" [(ngModel)]="end" />
       </li>
       <li>
-        <label>Ends at</label>
-        <input type="time" name="endTime" [(ngModel)]="endTime" />
-      </li>
-      <li>
-        <button type="submit" value="Submit">Add appointment</button>
+        <button type="submit" value="Submit">Voeg afspraak toe</button>
       </li>
     </ul>
   </form>
