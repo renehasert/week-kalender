@@ -54,7 +54,9 @@ isWithinRange(
 
 - Zorgen dat de nieuwe afspraak direct wordt weergegeven op de kalender en dat het formulier wordt geleegd.
 - De nieuwe afspraak opslaan in een store (misschien met NgRx).
+
   Als ik het haal:
+
 - Standaard een eindtijd bieden, half/heel uur na de opgegeven starttijd.
 - De afspraken in de afsprakenlijst alleen weergeven per gekozen week, waarschijnlijk met array.filter zolang het _hard coded_ afspraken zijn. Van een API zou ik alleen per week de afspraken fetchen.
 
