@@ -1,36 +1,14 @@
 <!-- Toolbar -->
 <div class="toolbar">
-  <h2>{{ title }}</h2>
-  <button class="week-nav" (click)="subWeek()">Vorige</button>
-  <h1>Week: {{ weekNumber }}</h1>
-  <button class="week-nav" (click)="addWeek()">Volgende</button>
+  <h2>{{ "Het Ziekenhuis" }}</h2>
+  <nav>
+    <a routerLink="/" routerLinkActive="active">Kalender</a>
+    <a routerLink="/afspraken" routerLinkActive="active">Afspraken</a>
+    <a routerLink="/toevoegen" routerLinkActive="active">Afspraak toevoegen</a>
+  </nav>
   <h2>{{ "Kalender" | uppercase }}</h2>
 </div>
 
-<!--Content-->
-<div class="content">
-  <mwl-calendar-week-view
-    [viewDate]="viewDate"
-    [events]="events"
-    [locale]="locale"
-    [weekStartsOn]="weekStartsOn"
-    [weekendDays]="weekendDays"
-  >
-  </mwl-calendar-week-view>
-  <hr />
-  <h2>Voeg een afspraak toe</h2>
-  <app-event-form (addEvent)="addEvent($event)"></app-event-form>
-  <hr />
-  <h2>Alle afspraken</h2>
-  <ul>
-    <li>
-      <app-event-item
-        *ngFor="let event of events"
-        [event]="event"
-      ></app-event-item>
-    </li>
-  </ul>
-</div>
+<router-outlet></router-outlet>
 
-<!-- Footer -->
-<footer></footer>
+<!-- <app-event-form (addEvent)="addEvent($event)"></app-event-form> -->

@@ -1,51 +1,49 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()">
-    <ul class="form-list">
-      <li>
-        <label>Titel</label>
-        <input
-          type="text"
-          name="title"
-          [(ngModel)]="title"
-          placeholder="Klacht"
-        />
-      </li>
+    <mat-form-field>
+      <mat-label>Titel</mat-label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        placeholder="Klacht"
+      />
+    </mat-form-field>
 
-      <li>
-        <label>Notities</label>
-        <textarea
-          name="notes"
-          [(ngModel)]="notes"
-          style="height: 200px;"
-          placeholder="Medicijnen, bijzonderheden..."
-        ></textarea>
-      </li>
+    <mat-form-field>
+      <mat-label>Notities</mat-label>
+      <textarea
+        name="notes"
+        [(ngModel)]="notes"
+        style="height: 200px;"
+        placeholder="Medicijnen, bijzonderheden..."
+      ></textarea>
+    </mat-form-field>
 
-      <li>
-        <label>Patient</label>
-        <input
-          type="text"
-          name="patient"
-          [(ngModel)]="patient"
-          placeholder="Naam"
-        />
-      </li>
+    <mat-form-field>
+      <mat-label>Patient</mat-label>
+      <input
+        type="text"
+        name="patient"
+        [(ngModel)]="patient"
+        placeholder="Naam"
+      />
+    </mat-form-field>
 
-      <li>
-        <label>Leeftijd</label>
-        <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
-      </li>
-      <li>
-        <label>Begint</label>
-        <input type="datetime-local" name="start" [(ngModel)]="start" />
-      </li>
-      <li>
-        <label>Eindigt</label>
-        <input type="datetime-local" name="end" [(ngModel)]="end" />
-      </li>
-      <li>
-        <button type="submit" value="Submit">Voeg afspraak toe</button>
-      </li>
-    </ul>
+    <mat-form-field>
+      <mat-label>Leeftijd</mat-label>
+      <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Begint</mat-label>
+      <input type="datetime-local" name="start" [(ngModel)]="start" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Eindigt</mat-label>
+      <input type="datetime-local" name="end" [(ngModel)]="end" />
+    </mat-form-field>
+    <mat-form-field>
+      <button type="submit" value="Submit">Voeg afspraak toe</button>
+    </mat-form-field>
   </form>
 </div>

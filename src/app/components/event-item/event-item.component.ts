@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Event } from '../../models/Event';
-import { format } from 'date-fns';
 
 @Component({
   selector: 'app-event-item',

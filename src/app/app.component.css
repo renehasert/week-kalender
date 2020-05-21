@@ -22,29 +22,26 @@ p {
 }
 
 .toolbar {
-  position: absolute;
-  padding: 5px 10px;
+  position: sticky;
+  margin-bottom: 10px;
+  padding: 0 2vw;
+  z-index: 3;
   top: 0;
-  left: 0;
-  right: 0;
   height: 60px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background-color: #19d27c;
   color: white;
   font-weight: 600;
 }
-.content {
-  position: relative;
-  top: 70px;
-}
 
-.week-nav {
-  background: #19d27c;
-  min-width: 100px;
-  border-radius: 5px;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  font-variant: small-caps;
-  outline: none;
+.toolbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0 10px;
+}
+.toolbar a:hover {
+  text-decoration: underline;
 }

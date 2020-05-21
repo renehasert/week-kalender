@@ -1,11 +1,13 @@
-<div class="events">
-  <h3>{{ event.title }}</h3>
+<mat-card>
+  <mat-card-title>{{ event.title }}</mat-card-title>
 
-  <ul>
-    <li>Naam: {{ event.patient }}</li>
-    <li>Leeftijd: {{ event.age }}</li>
-    <li>Notities: {{ event.notes }}</li>
-    <li>Begint: {{ event.start }}</li>
-    <li>Eindigt: {{ event.end }}</li>
-  </ul>
-</div>
+  <mat-card-subtitle>Naam: {{ event.patient }}</mat-card-subtitle>
+  <mat-card-content
+    ><ul>
+      <li>Leeftijd: {{ event.age }}</li>
+      <li>Notities: {{ event.notes }}</li>
+      <li>Begint: {{ event.start }}</li>
+      <li>Eindigt: {{ event.end }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

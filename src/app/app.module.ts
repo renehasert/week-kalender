@@ -10,18 +10,39 @@ import { EventFormComponent } from './components/event-form/event-form.component
 import { EventItemComponent } from './components/event-item/event-item.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarComponent } from './views/calendar/calendar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { EventsComponent } from './views/events/events.component';
 
 registerLocaleData(localeNl);
 
 @NgModule({
-  declarations: [AppComponent, EventFormComponent, EventItemComponent],
+  declarations: [
+    AppComponent,
+    EventFormComponent,
+    EventItemComponent,
+    CalendarComponent,
+    EventsComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatSliderModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    AppRoutingModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
