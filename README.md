@@ -22,7 +22,7 @@
 - Had graag bij de afsprakenlijst een simpeler 'Begint' en 'Eindigt' -string gehad, i.p.v de hele Date string. Dit was het einde van de dag, ik kwam er zo snel niet uit.
 - Halverwege bedacht ik dat alles in het Engels was, uit gewoonte. Ik heb zoveel mogelijk naar het Nederlands veranderd.
 - Had me achteraf beter moeten houden aan de Semantic Commit Messages voor Git.
-- Er staat een tip bij de opdracht over hoe ik zou omgaan met zomer-/wintertijd. Volgens mij heeft de zomer- of wintertijd geen invloed op de applicatie, aangezien de tijd op elke computer is aangepast op het juiste moment.
+- Zomer-/wintertijd: Ik zou van Date-fns overstappen op Moment.js, want Date-fns heeft geen opties daaromtrent. Moment.js heeft moment().isDST(). Daarmee kan worden gecheckt of het Zomertijd is, voor elke Locale. Voor zomertijd zou ik eerst (in onSubmit()) checken of de afspraak op zondag is in week 12 of 13; dan of the afspraak valt tussen 2:00 en 3:00. Als dat allemaal het geval is kijk ik of het einde van de afspraak .istDST() === true. Dan zou ik er een melding van geven, en vragen of de afspraak een uur mag opschuiven. Voor de wintertijd zou ik waarschijnlijk overlapping tussen afspraken toestaan, ieder met een eigen kleur, een voor zomertijd 2:00 en een voor wintertijd 2:00.
 
 ## Ten einde
 
@@ -54,8 +54,9 @@ isWithinRange(
 
 - Zorgen dat de nieuwe afspraak direct wordt weergegeven op de kalender en dat het formulier wordt geleegd.
 - De nieuwe afspraak opslaan in een store (misschien met NgRx).
+  Als ik het haal:
 - Standaard een eindtijd bieden, half/heel uur na de opgegeven starttijd.
-- De afspraken in de afsprakenlijst alleen weergeven per gekozen week, waarschijnlijk met array.filter zolang het _hard coded_ afspraken zijn.
+- De afspraken in de afsprakenlijst alleen weergeven per gekozen week, waarschijnlijk met array.filter zolang het _hard coded_ afspraken zijn. Van een API zou ik alleen per week de afspraken fetchen.
 
 # Opdracht
 
