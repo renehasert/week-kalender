@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-event-form',
@@ -6,8 +8,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./event-form.component.css'],
 })
 export class EventFormComponent implements OnInit {
-  @Output() addEvent: EventEmitter<any> = new EventEmitter();
-
   id: number;
   patient: string;
   age: number;
@@ -16,7 +16,10 @@ export class EventFormComponent implements OnInit {
   start: Date;
   end: Date;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private eventService: EventService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -31,7 +34,7 @@ export class EventFormComponent implements OnInit {
       end: new Date(this.end),
     };
 
-    this.addEvent.emit(event);
+    this.eventService.addEvent(event);
     console.log('submit', event);
   }
 }

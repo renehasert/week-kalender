@@ -1,49 +1,53 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <mat-label>Titel</mat-label>
-      <input
-        type="text"
-        name="title"
-        [(ngModel)]="title"
-        placeholder="Klacht"
-      />
-    </mat-form-field>
+  <mat-card>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <label>Titel</label>
+        <input
+          type="text"
+          name="title"
+          [(ngModel)]="title"
+          placeholder="Klacht"
+        />
+      </div>
 
-    <mat-form-field>
-      <mat-label>Notities</mat-label>
-      <textarea
-        name="notes"
-        [(ngModel)]="notes"
-        style="height: 200px;"
-        placeholder="Medicijnen, bijzonderheden..."
-      ></textarea>
-    </mat-form-field>
+      <div class="form-control">
+        <label>Notities</label>
+        <textarea
+          name="notes"
+          [(ngModel)]="notes"
+          style="height: 200px;"
+          placeholder="Medicijnen, bijzonderheden..."
+        ></textarea>
+      </div>
 
-    <mat-form-field>
-      <mat-label>Patient</mat-label>
-      <input
-        type="text"
-        name="patient"
-        [(ngModel)]="patient"
-        placeholder="Naam"
-      />
-    </mat-form-field>
+      <div class="form-control">
+        <label>Patient</label>
+        <input
+          type="text"
+          name="patient"
+          [(ngModel)]="patient"
+          placeholder="Naam"
+        />
+      </div>
 
-    <mat-form-field>
-      <mat-label>Leeftijd</mat-label>
-      <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Begint</mat-label>
-      <input type="datetime-local" name="start" [(ngModel)]="start" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Eindigt</mat-label>
-      <input type="datetime-local" name="end" [(ngModel)]="end" />
-    </mat-form-field>
-    <mat-form-field>
-      <button type="submit" value="Submit">Voeg afspraak toe</button>
-    </mat-form-field>
-  </form>
+      <div class="form-control">
+        <label>Leeftijd</label>
+        <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
+      </div>
+      <div class="form-control">
+        <label>Begint</label>
+        <input type="datetime-local" name="start" [(ngModel)]="start" />
+      </div>
+      <div class="form-control">
+        <label>Eindigt</label>
+        <input type="datetime-local" name="end" [(ngModel)]="end" />
+      </div>
+      <div class="form-control">
+        <button mat-raised-button type="submit" value="Submit">
+          Voeg afspraak toe
+        </button>
+      </div>
+    </form>
+  </mat-card>
 </div>

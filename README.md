@@ -34,24 +34,7 @@ In die vier uur zou ik:
 
 - De styling op orde brengen. Nu is het lelijk.
 - Routing toevoegen.
-- Form validation toevoegen, waarbij ik overlap van afspraken zou verbieden. Dit zou ik doen door in **onSubmit()** te kijken of er al een afspraak staat op dat tijdstip, middels zoiets (Date-fns):
-
-```
-const sameHour: Date = events.find(e => {
-  return (
-    format(new Date(e.start), "YYYY-MM-DD, HH") ===
-    format(new Date(event.end), "YYYY-MM-DD, HH")
-  || format(new Date(event.start), "YYYY-MM-DD, HH") ===
-  format(new Date(e.end), "YYYY-MM-DD, HH")
-  )
-})
-isWithinRange(
-  new Date(sameHour), new Date(event.start), new Date(event.end)
-) ? alert('Dates are overlapping')
-: this.addEvent.emit(event)
-
-```
-
+- Form validation toevoegen, waarbij ik overlap van afspraken zou verbieden. Dit zou ik doen door in **onSubmit()** te kijken of er al een afspraak staat op dat tijdstip.
 - Zorgen dat de nieuwe afspraak direct wordt weergegeven op de kalender en dat het formulier wordt geleegd.
 - De nieuwe afspraak opslaan in een store (misschien met NgRx).
 
