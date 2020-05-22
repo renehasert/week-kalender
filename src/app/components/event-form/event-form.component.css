@@ -1,6 +1,6 @@
 .container {
   width: 60%;
-  margin: 15px 30px;
+  margin: 15px 52px;
 }
 
 form {
@@ -34,4 +34,13 @@ textarea {
 button {
   margin: 10px 0;
   flex: 1 1 auto;
+}
+
+.danger {
+  margin-left: auto;
+  background: #ff6161e3;
+  padding: 10px;
+  font-size: 1rem;
+  max-width: 70%;
+  border: 1px dotted black;
 }

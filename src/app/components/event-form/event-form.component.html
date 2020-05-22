@@ -7,11 +7,18 @@
         <input
           type="text"
           name="title"
+          required
           [(ngModel)]="title"
           placeholder="Klacht"
+          #titleInput="ngModel"
         />
       </div>
+      <!-- Form validation -->
+      <div *ngIf="titleInput.touched" class="danger">
+        Titel is vereist.
+      </div>
 
+      <!-- Form validation -->
       <div class="form-control">
         <label>Notities</label>
         <textarea
@@ -27,22 +34,50 @@
         <input
           type="text"
           name="patient"
+          required
           [(ngModel)]="patient"
           placeholder="Naam"
+          #patientInput="ngModel"
         />
       </div>
-
+      <div *ngIf="patientInput.touched" class="danger">
+        Naam van patient is vereist.
+      </div>
       <div class="form-control">
         <label>Leeftijd</label>
-        <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
+        <input
+          type="number"
+          name="age"
+          required
+          [(ngModel)]="age"
+          placeholder="21"
+        />
       </div>
       <div class="form-control">
         <label>Begint</label>
-        <input type="datetime-local" name="start" [(ngModel)]="start" />
+        <input
+          type="datetime-local"
+          required
+          name="start"
+          [(ngModel)]="start"
+          #startInput="ngModel"
+        />
+      </div>
+      <div *ngIf="startInput.touched" class="danger">
+        Starttijd is vereist.
       </div>
       <div class="form-control">
         <label>Eindigt</label>
-        <input type="datetime-local" name="end" [(ngModel)]="end" />
+        <input
+          type="datetime-local"
+          required
+          name="end"
+          [(ngModel)]="end"
+          #endInput="ngModel"
+        />
+      </div>
+      <div *ngIf="endInput.touched" class="danger">
+        Eindtijd is vereist.
       </div>
       <div class="form-control">
         <button mat-raised-button type="submit" value="Submit">
