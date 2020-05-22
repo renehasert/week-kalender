@@ -37,7 +37,8 @@ In die vier uur zou ik:
 - Form validation toevoegen, waarbij ik overlap van afspraken zou verbieden. Dit zou ik doen door in **addEvent()** (EventService) te kijken of er al een afspraak staat op dat tijdstip, middels zoiets (Date-fns):
 
 ```
-addEvent(event) {
+
+  addEvent(event) {
     const sameHour: any = this.events.filter((e) => {
       return (
         format(new Date(e.start), 'yyyy-MM-dd  HH') ===
@@ -46,18 +47,20 @@ addEvent(event) {
           format(new Date(e.end), 'yyyy-MM-dd  HH')
       );
     });
-    console.log(sameHour);
     const conflict: any = sameHour.filter((e) => {
-      isWithinInterval(new Date(e.start), {
-        start: new Date(event.start),
-        end: new Date(event.end),
-      }) ||
+      return (
+        isWithinInterval(new Date(e.start), {
+          start: new Date(event.start),
+          end: new Date(event.end),
+        }) ||
         isWithinInterval(new Date(e.end), {
           start: new Date(event.start),
           end: new Date(event.end),
-        });
+        })
+      );
     });
-    conflict
+    console.log('conflict', conflict);
+    conflict.length !== 0
       ? alert('Er staat al een afspraak op dit tijdstip.')
       : this.events.push(event);
   }
