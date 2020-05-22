@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Event } from '../models/Event';
-import { format, isWithinInterval } from 'date-fns';
+import { format, isWithinInterval, addMinutes, subMinutes } from 'date-fns';
 
 @Injectable({
   providedIn: 'root',
@@ -56,18 +56,20 @@ export class EventService {
           format(new Date(e.end), 'yyyy-MM-dd  HH')
       );
     });
-    console.log(sameHour);
     const conflict: any = sameHour.filter((e) => {
-      isWithinInterval(new Date(e.start), {
-        start: new Date(event.start),
-        end: new Date(event.end),
-      }) ||
+      return (
+        isWithinInterval(new Date(e.start), {
+          start: new Date(event.start),
+          end: new Date(event.end),
+        }) ||
         isWithinInterval(new Date(e.end), {
           start: new Date(event.start),
           end: new Date(event.end),
-        });
+        })
+      );
     });
-    conflict
+    console.log('conflict', conflict);
+    conflict.length !== 0
       ? alert('Er staat al een afspraak op dit tijdstip.')
       : this.events.push(event);
   }
