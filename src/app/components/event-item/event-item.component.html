@@ -7,8 +7,8 @@
   <mat-card-content
     ><ul>
       <li>Notities: {{ event.notes }}</li>
-      <li>Begint: {{ event.start }}</li>
-      <li>Eindigt: {{ event.end }}</li>
+      <li>Begint: {{ event.start | date: "dd-MM-yyyy, HH:mm" }}</li>
+      <li>Eindigt: {{ event.end | date: "dd-MM-yyyy, HH:mm" }}</li>
     </ul>
   </mat-card-content>
 </mat-card>
