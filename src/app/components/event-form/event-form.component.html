@@ -15,12 +15,10 @@
           required
         />
       </div>
-      <!-- Form validation -->
       <div *ngIf="f.submitted && titleInput.invalid" class="danger">
         Titel is vereist.
       </div>
 
-      <!-- Form validation -->
       <div class="form-control">
         <label>Notities</label>
         <textarea
@@ -32,7 +30,7 @@
       </div>
 
       <div class="form-control">
-        <label>Patient</label>
+        <label>Patiënt</label>
         <input
           type="text"
           name="patient"
@@ -44,17 +42,11 @@
         />
       </div>
       <div *ngIf="f.submitted && patientInput.invalid" class="danger">
-        Naam van patient is vereist.
+        Naam van patiënt is vereist.
       </div>
       <div class="form-control">
         <label>Leeftijd</label>
-        <input
-          type="number"
-          name="age"
-          required
-          [(ngModel)]="age"
-          placeholder="21"
-        />
+        <input type="number" name="age" [(ngModel)]="age" placeholder="21" />
       </div>
       <div class="form-control">
         <label>Begint</label>
@@ -79,6 +71,7 @@
           [(ngModel)]="end"
           #endInput="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && endInput.invalid }"
+          value="{{ startInput.value }}"
         />
       </div>
       <div *ngIf="f.submitted && endInput.invalid" class="danger">

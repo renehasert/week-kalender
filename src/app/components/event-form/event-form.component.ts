@@ -8,6 +8,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { EventService } from '../../services/event.service';
+import { getTime } from 'date-fns';
 
 @Component({
   selector: 'app-event-form',
@@ -41,8 +42,11 @@ export class EventFormComponent implements OnInit {
       start: new Date(this.start),
       end: new Date(this.end),
     };
-
-    this.eventService.addEvent(event);
-    console.log('submit', event);
+    if (getTime(event.start) > getTime(event.end)) {
+      alert('Eindtijd moet later zijn dan Begintijd.');
+    } else {
+      this.eventService.addEvent(event);
+      console.log('submit', event);
+    }
   }
 }
