@@ -14,7 +14,7 @@
         />
       </div>
       <!-- Form validation -->
-      <div *ngIf="titleInput.touched" class="danger">
+      <div *ngIf="titleInput.invalid" class="danger">
         Titel is vereist.
       </div>
 
@@ -40,7 +40,7 @@
           #patientInput="ngModel"
         />
       </div>
-      <div *ngIf="patientInput.touched" class="danger">
+      <div *ngIf="patientInput.invalid" class="danger">
         Naam van patient is vereist.
       </div>
       <div class="form-control">
@@ -63,7 +63,7 @@
           #startInput="ngModel"
         />
       </div>
-      <div *ngIf="startInput.touched" class="danger">
+      <div *ngIf="startInput.invalid" class="danger">
         Starttijd is vereist.
       </div>
       <div class="form-control">
@@ -76,7 +76,7 @@
           #endInput="ngModel"
         />
       </div>
-      <div *ngIf="endInput.touched" class="danger">
+      <div *ngIf="endInput.invalid" class="danger">
         Eindtijd is vereist.
       </div>
       <div class="form-control">

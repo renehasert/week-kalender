@@ -48,15 +48,7 @@ export class EventService {
   }
 
   addEvent(event) {
-    const sameHour: any = this.events.filter((e) => {
-      return (
-        format(new Date(e.start), 'yyyy-MM-dd  HH') ===
-          format(new Date(event.start), 'yyyy-MM-dd  HH') ||
-        format(new Date(event.end), 'yyyy-MM-dd  HH') ===
-          format(new Date(e.end), 'yyyy-MM-dd  HH')
-      );
-    });
-    const conflict: any = sameHour.filter((e) => {
+    const conflict: any = this.events.filter((e) => {
       return (
         isWithinInterval(new Date(e.start), {
           start: new Date(event.start),
