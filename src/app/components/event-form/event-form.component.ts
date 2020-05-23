@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 import { EventService } from '../../services/event.service';
 
 @Component({
@@ -8,6 +15,7 @@ import { EventService } from '../../services/event.service';
   styleUrls: ['./event-form.component.css'],
 })
 export class EventFormComponent implements OnInit {
+  form: FormGroup;
   id: number;
   patient: string;
   age: number;

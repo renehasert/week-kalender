@@ -1,20 +1,22 @@
 <div class="container">
   <h1>Afspraak toevoegen</h1>
   <mat-card>
-    <form (ngSubmit)="onSubmit()">
+    <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
       <div class="form-control">
         <label>Titel</label>
+        <!-- prettier-ignore-attribute -->
         <input
           type="text"
           name="title"
-          required
           [(ngModel)]="title"
           placeholder="Klacht"
           #titleInput="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && titleInput.invalid }"
+          required
         />
       </div>
       <!-- Form validation -->
-      <div *ngIf="titleInput.invalid" class="danger">
+      <div *ngIf="f.submitted && titleInput.invalid" class="danger">
         Titel is vereist.
       </div>
 
@@ -38,9 +40,10 @@
           [(ngModel)]="patient"
           placeholder="Naam"
           #patientInput="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && patientInput.invalid }"
         />
       </div>
-      <div *ngIf="patientInput.invalid" class="danger">
+      <div *ngIf="f.submitted && patientInput.invalid" class="danger">
         Naam van patient is vereist.
       </div>
       <div class="form-control">
@@ -61,9 +64,10 @@
           name="start"
           [(ngModel)]="start"
           #startInput="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && startInput.invalid }"
         />
       </div>
-      <div *ngIf="startInput.invalid" class="danger">
+      <div *ngIf="f.submitted && startInput.invalid" class="danger">
         Starttijd is vereist.
       </div>
       <div class="form-control">
@@ -74,13 +78,19 @@
           name="end"
           [(ngModel)]="end"
           #endInput="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && endInput.invalid }"
         />
       </div>
-      <div *ngIf="endInput.invalid" class="danger">
+      <div *ngIf="f.submitted && endInput.invalid" class="danger">
         Eindtijd is vereist.
       </div>
       <div class="form-control">
-        <button mat-raised-button type="submit" value="Submit">
+        <button
+          mat-raised-button
+          type="submit"
+          value="Submit"
+          [disabled]="!f.form.valid"
+        >
           Voeg afspraak toe
         </button>
       </div>
