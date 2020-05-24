@@ -13,7 +13,9 @@ export class EventsComponent implements OnInit {
   constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
-    this.events = this.eventService.getEvents();
+    this.events = this.eventService
+      .getEvents()
+      .sort((a: any, b: any) => a.start - b.start);
   }
 
   deleteEvent(event: Event) {

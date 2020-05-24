@@ -30,8 +30,8 @@ export class EventService {
       title: 'Uitslag',
       patient: 'Frans Leegdans',
       age: 19,
-      start: new Date('2020-5-21 14:30:00'),
-      end: new Date('2020-5-21 17:00:00'),
+      start: new Date('2020-5-21 22:30:00'),
+      end: new Date('2020-5-21 23:00:00'),
     },
     {
       id: 4,

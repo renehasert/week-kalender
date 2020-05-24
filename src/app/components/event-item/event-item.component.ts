@@ -15,7 +15,7 @@ export class EventItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onDelete(event) {
+  onDelete(event: Event) {
     this.deleteEvent.emit(event);
   }
 }
