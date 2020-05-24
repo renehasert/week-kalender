@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import {
   FormBuilder,
   FormControl,
@@ -25,10 +24,7 @@ export class EventFormComponent implements OnInit {
   start: Date;
   end: Date;
 
-  constructor(
-    private route: ActivatedRoute,
-    private eventService: EventService
-  ) {}
+  constructor(private eventService: EventService) {}
 
   ngOnInit(): void {}
 

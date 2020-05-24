@@ -10,5 +10,6 @@
       <li>Begint: {{ event.start | date: "dd-MM-yyyy, HH:mm" }}</li>
       <li>Eindigt: {{ event.end | date: "dd-MM-yyyy, HH:mm" }}</li>
     </ul>
+    <button (click)="onDelete(event)">Verwijder</button>
   </mat-card-content>
 </mat-card>

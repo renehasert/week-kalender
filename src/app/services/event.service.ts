@@ -18,7 +18,7 @@ export class EventService {
       end: new Date('2020-5-19 14:00'),
     },
     {
-      id: 1,
+      id: 2,
       title: 'Lyme',
       patient: 'Anita Hielzeer',
       age: 46,
@@ -26,7 +26,7 @@ export class EventService {
       end: new Date('2020-5-20 10:00'),
     },
     {
-      id: 1,
+      id: 3,
       title: 'Uitslag',
       patient: 'Frans Leegdans',
       age: 19,
@@ -34,7 +34,7 @@ export class EventService {
       end: new Date('2020-5-21 17:00:00'),
     },
     {
-      id: 1,
+      id: 4,
       title: 'Koffiedik pijn',
       patient: 'Max Havelaar',
       age: 92,
@@ -45,6 +45,10 @@ export class EventService {
 
   getEvents() {
     return this.events;
+  }
+
+  deleteEvent(event) {
+    return (this.events = this.events.filter((e) => e !== event));
   }
 
   addEvent(event) {

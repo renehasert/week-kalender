@@ -1,4 +1,8 @@
 <div class="container">
   <h1>Afspraken</h1>
-  <app-event-item *ngFor="let event of events" [event]="event"></app-event-item>
+  <app-event-item
+    *ngFor="let event of events"
+    [event]="event"
+    (deleteEvent)="deleteEvent($event)"
+  ></app-event-item>
 </div>

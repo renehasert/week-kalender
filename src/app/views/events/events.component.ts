@@ -15,4 +15,9 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {
     this.events = this.eventService.getEvents();
   }
+
+  deleteEvent(event: Event) {
+    this.events = this.events.filter((e) => e.id !== event.id);
+    this.eventService.deleteEvent(event);
+  }
 }

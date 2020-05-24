@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '../../models/Event';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-event-item',
@@ -8,8 +9,13 @@ import { Event } from '../../models/Event';
 })
 export class EventItemComponent implements OnInit {
   @Input() event: Event;
+  @Output() deleteEvent: EventEmitter<Event> = new EventEmitter();
 
-  constructor() {}
+  constructor(private eventService: EventService) {}
 
   ngOnInit(): void {}
+
+  onDelete(event) {
+    this.deleteEvent.emit(event);
+  }
 }
