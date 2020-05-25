@@ -47,11 +47,11 @@ export class EventService {
     return this.events;
   }
 
-  deleteEvent(event) {
+  deleteEvent(event: Event) {
     return (this.events = this.events.filter((e) => e !== event));
   }
 
-  addEvent(event) {
+  checkConflict(event: Event) {
     const conflict: any = this.events.filter((e) => {
       return (
         isWithinInterval(new Date(e.start), {
@@ -65,8 +65,10 @@ export class EventService {
       );
     });
     console.log('conflict', conflict);
-    conflict.length !== 0
-      ? alert('Er staat al een afspraak op dit tijdstip.')
-      : this.events.push(event);
+    return conflict;
+  }
+
+  addEvent(event: Event) {
+    this.events.push(event);
   }
 }

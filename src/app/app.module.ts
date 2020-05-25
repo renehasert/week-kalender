@@ -20,6 +20,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { EventsComponent } from './views/events/events.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 registerLocaleData(localeNl);
 
@@ -38,6 +39,7 @@ registerLocaleData(localeNl);
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     AppRoutingModule,
     CalendarModule.forRoot({
