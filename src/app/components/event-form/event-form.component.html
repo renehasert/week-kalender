@@ -8,14 +8,15 @@
         <input
           type="text"
           name="title"
+          #titleInput="ngModel"
           [(ngModel)]="title"
           placeholder="Klacht"
-          #titleInput="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && titleInput.invalid }"
+          [ngClass]="{ 'is-invalid': titleInput.touched
+        && titleInput.invalid }"
           required
         />
       </div>
-      <div *ngIf="f.submitted && titleInput.invalid" class="danger">
+      <div *ngIf="titleInput.touched && titleInput.invalid" class="danger">
         Titel is vereist.
       </div>
 
@@ -38,10 +39,12 @@
           [(ngModel)]="patient"
           placeholder="Naam"
           #patientInput="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && patientInput.invalid }"
+          [ngClass]="{
+            'is-invalid': patientInput.touched && patientInput.invalid
+          }"
         />
       </div>
-      <div *ngIf="f.submitted && patientInput.invalid" class="danger">
+      <div *ngIf="patientInput.touched && patientInput.invalid" class="danger">
         Naam van patiënt is vereist.
       </div>
       <div class="form-control">
@@ -56,10 +59,10 @@
           name="start"
           [(ngModel)]="start"
           #startInput="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && startInput.invalid }"
+          [ngClass]="{ 'is-invalid': startInput.touched && startInput.invalid }"
         />
       </div>
-      <div *ngIf="f.submitted && startInput.invalid" class="danger">
+      <div *ngIf="startInput.touched && startInput.invalid" class="danger">
         Starttijd is vereist.
       </div>
       <div class="form-control">
@@ -70,11 +73,11 @@
           name="end"
           [(ngModel)]="end"
           #endInput="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && endInput.invalid }"
+          [ngClass]="{ 'is-invalid': endInput.touched && endInput.invalid }"
           value="{{ startInput.value }}"
         />
       </div>
-      <div *ngIf="f.submitted && endInput.invalid" class="danger">
+      <div *ngIf="endInput.touched && endInput.invalid" class="danger">
         Eindtijd is vereist.
       </div>
       <div class="form-control">
