@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../models/Event';
 import { EventService } from '../../services/event.service';
-import { getWeek, addWeeks, subWeeks, startOfWeek } from 'date-fns';
+import { getWeek, addWeeks, subWeeks } from 'date-fns';
 import { DAYS_OF_WEEK } from 'angular-calendar';
 
 @Component({
