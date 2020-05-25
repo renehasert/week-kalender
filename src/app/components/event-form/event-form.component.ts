@@ -9,6 +9,7 @@ import {
 import { EventService } from '../../services/event.service';
 import { getTime } from 'date-fns';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Event } from '../../models/Event';
 
 @Component({
   selector: 'app-event-form',
@@ -17,13 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class EventFormComponent implements OnInit {
   form: FormGroup;
-  id: number;
-  patient: string;
-  age: number;
-  title: string;
-  notes: string;
-  start: Date;
-  end: Date;
+  event: Event;
 
   constructor(
     private eventService: EventService,
@@ -43,12 +38,12 @@ export class EventFormComponent implements OnInit {
   onSubmit() {
     const event = {
       id: Math.round(Math.random() * 100),
-      title: this.title,
-      age: this.age,
-      patient: this.patient,
-      notes: this.notes,
-      start: new Date(this.start),
-      end: new Date(this.end),
+      title: this.event.title,
+      age: this.event.age,
+      patient: this.event.patient,
+      notes: this.event.notes,
+      start: new Date(this.event.start),
+      end: new Date(this.event.end),
     };
     if (getTime(event.start) > getTime(event.end)) {
       this.openSnackBar('Eindtijd moet later zijn dan Begintijd', null);

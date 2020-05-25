@@ -17,6 +17,7 @@ export class CalendarComponent implements OnInit {
   weekStartsOn: number = 1;
   weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
   excludeDays: number[] = this.weekendDays;
+
   constructor(private eventService: EventService) {}
 
   ngOnInit(): void {

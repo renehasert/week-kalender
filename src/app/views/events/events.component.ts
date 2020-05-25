@@ -9,6 +9,7 @@ import { EventService } from '../../services/event.service';
 })
 export class EventsComponent implements OnInit {
   events: Event[];
+  selected = 'option2';
 
   constructor(private eventService: EventService) {}
 
